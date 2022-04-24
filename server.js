@@ -5,8 +5,8 @@ import express from 'express';
 import connectDB from './models/schemas/mongodbconfig.js';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
-// import itemRoutes from './Routes/item.js';
-// import userRoutes from './Routes/user.js';
+ import questionsRoutes from './Routes/questions.js';
+import userRoutes from './Routes/user.js';
 
 //db connection
 connectDB();   
@@ -22,8 +22,8 @@ server.use(express.json());
 server.use(express.urlencoded({extended:true}));
 
 // //USE ROUTES
-// server.use('/', itemRoutes);
-// server.use('/', userRoutes);
+server.use('/', questionsRoutes);
+server.use('/', userRoutes);
 
 
 
